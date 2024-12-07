@@ -1,0 +1,41 @@
+<div #productSection class="container">
+
+    <div class="card">
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center align-self-center"> <img class="img-fluid"
+                    src="{{ productData$.data.productImgPath }}" alt="product-imf"> </div>
+            <div class="col-md-6 info">
+                <div class="product-badges mb-3">
+                    <span *ngIf="productData$.data.isFeatured" class="badge text-info">Featured</span>
+                    <span *ngIf="productData$.data.isBestSeller" class="badge text-warning">Best Seller</span>
+                    <span class="badge text-primary">{{ productData$.data.category.category }}</span>
+                </div>
+                <div class="row">
+                        <h1 class="title">{{productData$.data.name}}</h1>
+                </div>
+                <div class="row"><p class="description">{{productData$.data.description}}</p></div>
+                
+                <div class="row">
+                    <h4 class="price text-success">${{productData$.data.price}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-12 text-center mb-5">
+            <h2 class="sub-title">Similar Products</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 mb-4" *ngFor="let similarProduct of similarProducts$">
+            <app-product-card [productData]="similarProduct"></app-product-card>
+        </div>
+    </div>
+</div>
+
+

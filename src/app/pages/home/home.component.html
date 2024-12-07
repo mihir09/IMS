@@ -1,0 +1,31 @@
+<section class="featured-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center mt-5">
+                <h2 class="text-white">Featured Products.</h2>
+                <p class="text-white">Something we think that are worth trying.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3" *ngFor="let featuredProduct of featuredproducts$">
+                <app-product-card [productData]="featuredProduct"></app-product-card>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="top-seller-section mt-5">
+    <div class="container">
+        <div class="col-md-12 text-center">
+            <h2>Top Selling Products.</h2>
+            <p>Something that people are crazy about.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mt-3" *ngFor="let bestSellerProduct of bestSellerProduct$">
+                <app-product-card [productData]="bestSellerProduct"></app-product-card>
+            </div>       
+        </div>
+    </div>
+</section>

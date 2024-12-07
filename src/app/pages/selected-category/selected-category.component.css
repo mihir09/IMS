@@ -1,0 +1,22 @@
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-container input[type="text"] {
+    flex-grow: 1;
+    padding-right: 30px;
+}
+
+.search-icon, .clear-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.clear-icon:focus, .search-icon:focus{
+    color: var(--primary-color);
+    border: 1px var(--primary-color) dashed;
+}

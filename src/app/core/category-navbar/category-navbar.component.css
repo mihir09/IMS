@@ -1,0 +1,23 @@
+nav{
+    margin-top: 70px;
+    height: 50px;
+    background-color: var(--navbar-footer-color);
+}
+
+.nav-link{
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-link {
+    text-decoration: none;
+}
+
+/* .navbar-nav .nav-link.active {
+    border-bottom: 2px solid #007bff;
+    color:  ;
+} */
+
+.navbar-nav .nav-link.active {
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}

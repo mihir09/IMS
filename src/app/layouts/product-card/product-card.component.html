@@ -1,0 +1,37 @@
+<div 
+    class="card product-card shadow-effect h-100" 
+    *ngIf="productData" 
+    [routerLink]="['/product', productData.id]"
+>
+    <div class="card-img-container position-relative">
+        <img 
+            src="{{ productData.data.productImgPath }}" 
+            alt="{{ productData.data.name }}" 
+            class="card-img-top product-img"
+        />
+        <div class="product-badges position-absolute top-0 start-0 p-2">
+            <span 
+                *ngIf="productData.data.isFeatured" 
+                class="badge bg-info text-white me-2"
+            >
+                Featured
+            </span>
+            <span 
+                *ngIf="productData.data.isBestSeller" 
+                class="badge bg-warning text-dark me-2"
+            >
+                Best Seller
+            </span>
+
+        </div>
+    </div>
+    <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+            <h5 class="card-title text-center fw-bold">{{ productData.data.name }}</h5>
+            <p class="text-muted text-center small">{{ productData.data.description }}</p>
+        </div>
+        <div class="text-center">
+            <h4 class="text-success fw-bold">${{ productData.data.price }}</h4>
+        </div>
+    </div>
+</div>

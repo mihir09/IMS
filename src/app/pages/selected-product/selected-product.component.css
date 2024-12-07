@@ -1,0 +1,87 @@
+.product-badges {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.product-badges .badge {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--secondary-color);
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card {
+    max-width: 1000px;
+    width: 100%;
+    padding: 4rem;
+    background-color: var(--primary-color);
+    color: var(--secodnary-color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.price{
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.title{
+    font-weight: bold;
+    margin-top: 1rem;
+    color: var(--accent-color);
+}
+
+.description{
+    margin-top:0.6rem;
+    font-size: medium;
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+.container-fluid{
+    background-color: var(--secondary-color);
+}
+
+.sub-title {
+    color: var(--primary-color);
+    font-size: 2rem;
+} 
+
+@media(max-width:768px) {
+    .card {
+        width: 100%;
+        padding: 1.5rem
+    }
+}
+
+.row {
+    margin: 0
+}
+
+.info {
+    padding: 6vh 0vh
+}
+
+@media(max-width:768px) {
+    .info {
+        padding: 0
+    }
+}
+
+img {
+    height: fit-content;
+    width: 75%;
+    padding: 1rem
+}
+
+@media(max-width:768px) {
+    img {
+        padding: 2.5rem 0
+    }
+}

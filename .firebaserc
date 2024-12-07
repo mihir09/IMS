@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ims-fire": {
+      "hosting": {
+        "IMS": [
+          "ims-fire"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ims-fire"
+  }
+}
