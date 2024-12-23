@@ -9,9 +9,26 @@ import { ProductsService } from 'src/app/services/products.service';
 export class HomeComponent {
   featuredproducts$: any[] = [];
   bestSellerProduct$: any[] = [];
+  carouselSlides = [
+    {
+      image: 'assets/images/banner1.jpg',
+      title: 'Biggest Sale of the Season!',
+      description: 'Up to 50% off on selected items.',
+    },
+    {
+      image: 'assets/images/banner2.jpg',
+      title: 'New Arrivals',
+      description: 'Explore the latest trends.',
+    },
+    {
+      image: 'assets/images/banner3.jpg',
+      title: 'Exclusive Deals',
+      description: 'Limited time offers just for you!',
+    }
+  ];
 
-  constructor(private productService: ProductsService) {}
-  
+  constructor(private productService: ProductsService) { }
+
   ngOnInit(): void {
     this.productService.loadFeaturedProducts().subscribe((products: any[]) => {
       this.featuredproducts$ = products;

@@ -20,7 +20,7 @@ export class SelectedCategoryComponent implements OnInit {
       this.categoryObj = val;
       this.productService.loadCategoryProducts(val['id']).subscribe((products: any[]) => {
         this.products$ = products;
-        this.filteredProducts = [...products]; // Initialize filteredProducts
+        this.filteredProducts = [...products];
       }, (error) => {
         console.error('Error loading products:', error);
       });

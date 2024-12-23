@@ -61,7 +61,7 @@ export class ProductsService {
 
   loadCategoryProducts(categoryId: any): Observable<any[]> {
     return new Observable(observer => {
-      const categoryQuery = query(this.productCollection, where('category.categoryId', '==', categoryId), limit(20));
+      const categoryQuery = query(this.productCollection, where('category.categoryId', '==', categoryId));
       return onSnapshot(categoryQuery,
         (snapshot) => {
           const products = snapshot.docs.map(doc => ({

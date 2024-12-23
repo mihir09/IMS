@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { CategoriesService } from 'src/app/services/categories.service';
 
 interface Category {
@@ -16,13 +17,20 @@ interface Category {
 export class CategoryNavbarComponent implements OnInit {
   categories$: Category[] = [];
 
-  constructor(private categoriesService: CategoriesService) {}
+  constructor(private categoriesService: CategoriesService, private router: Router) {}
 
   ngOnInit(): void {
+
     this.categoriesService.loadCategory().subscribe((categories: any[]) => {
+      this.router.events.subscribe(event => {
+        if (event instanceof NavigationEnd) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
       // Mapping the received categories to Category interface
       this.categories$ = categories.map(item => ({ id: item.id, data: { category: item.data.category } }));
       this.categories$ = this.sortCategories(this.categories$);
+      
     }, (error) => {
       console.error('Error loading categories:', error);
     });

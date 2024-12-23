@@ -1,4 +1,37 @@
-.featured-section{
+.featured-section {
     padding: 0 130px 130px 130px;
     background-color: var(--primary-color);
+}
+
+.hero-section {
+    background-color: var(--primary-color-light);
+    margin-top: 56px;
+    padding-top: 20px;
+    color: var(--secondary-color) !important;
+}
+
+.carousel-item img {
+    height: 70vh;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background: rgba(255, 255, 255, 1);
+    padding: 0.5rem;
+    border-radius: 8px;
+    color: var(--primary-color);
+    font-size: larger;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  color: var(--primary-color) !important;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.custom-arrow .carousel-control-prev-icon,
+.custom-arrow .carousel-control-next-icon {
+  filter: invert(100%);
 }

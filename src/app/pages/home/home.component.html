@@ -1,31 +1,61 @@
-<section class="featured-section">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 text-center mt-5">
-                <h2 class="text-white">Featured Products.</h2>
-                <p class="text-white">Something we think that are worth trying.</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-3" *ngFor="let featuredProduct of featuredproducts$">
-                <app-product-card [productData]="featuredProduct"></app-product-card>
-            </div>
-        </div>
+<section class="featured-section py-5">
+  <div class="container">
+    <div class="row text-center mb-4">
+      <div class="col-md-12">
+        <h2 class="text-white">Featured Products</h2>
+        <p class="text-white-50">Curated selections we think are worth trying.</p>
+      </div>
     </div>
+
+    <div class="row g-2">
+      <div class="col-6 col-md-4 col-lg-3" *ngFor="let featuredProduct of featuredproducts$">
+        <app-product-card [productData]="featuredProduct"></app-product-card>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="top-seller-section mt-5">
-    <div class="container">
-        <div class="col-md-12 text-center">
-            <h2>Top Selling Products.</h2>
-            <p>Something that people are crazy about.</p>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4 mt-3" *ngFor="let bestSellerProduct of bestSellerProduct$">
-                <app-product-card [productData]="bestSellerProduct"></app-product-card>
-            </div>       
-        </div>
+  <div class="container">
+    <div class="col-md-12 text-center">
+      <h2>Top Selling Products.</h2>
+      <p>Something that people are crazy about.</p>
     </div>
+
+    <div class="row">
+      <div class="col-md-4 mt-3" *ngFor="let bestSellerProduct of bestSellerProduct$">
+        <app-product-card [productData]="bestSellerProduct"></app-product-card>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero-section">
+  <div class="container">
+    <div class="col-md-12 text-center">
+      <h2 class="text-white">Deals.</h2>
+      <p class="text-white-50">Specials deals going on.</p>
+    </div>
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let slide of carouselSlides; let i = index" [class.active]="i === 0">
+          <img [src]="slide.image" class="d-block mx-auto w-75" [alt]="slide.title">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{ slide.title }}</h5>
+            <p>{{ slide.description }}</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#heroCarousel"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#heroCarousel"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
 </section>
